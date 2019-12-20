@@ -39,15 +39,15 @@ $app->post('/api/admin/addAdmin', function (Request $request, Response $response
         $add_admin_query = $db->prepare("CALL addAdmin(?, ?, ?, ?)");
         $add_admin_query->bindParam(1, $adminName, PDO::PARAM_STR);
         $add_admin_query->bindParam(2, $adminEmail, PDO::PARAM_STR);
-        $add_admin_query->bindParam(3, $adminPassword, PDO::PARAM_STR);
-        $add_admin_query->bindParam(4, $adminType, PDO::PARAM_STR);
+        $add_admin_query->bindParam(3, $adminType, PDO::PARAM_INT);
+        $add_admin_query->bindParam(4, $adminPassword, PDO::PARAM_STR);
         $add = $add_admin_query->execute();
 
         if (!$add) {
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'admin not added'
+                'message' => 'admin is not added'
             );
             return $response->withJson($data);
         }
