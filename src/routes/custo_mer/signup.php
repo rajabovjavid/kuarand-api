@@ -3,12 +3,12 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-// customer sign up
-$app->post('/api/customer/signup', function (Request $request, Response $response) {
+// custo_mer sign up
+$app->post('/api/custo_mer/signup', function (Request $request, Response $response) {
     $cusName = $request->getParam('cus_name');
     $cusEmail = $request->getParam('cus_email');
     $cusPassword = md5($request->getParam('cus_password'));
-
+    $cusPhone = $request->getParam('cus_phone');
     try {
 
         // Get DB Object
@@ -34,22 +34,18 @@ $app->post('/api/customer/signup', function (Request $request, Response $respons
         }
 
         //Kullanıcı kayıt işlemi yapılıyor...
-        $add_customer_query = $db->prepare("INSERT INTO Customer SET
-					customerName=:cname,
-					customerEmail=:email,
-					customerPassword=:password
-					");
-        $insert = $add_customer_query->execute(array(
-            'cname' => $cusName,
-            'email' => $cusEmail,
-            'password' => $cusPassword
-        ));
+        $add_customer_query = $db->prepare("CALL addCustomer(?, ?, ?, ?)");
+        $add_customer_query->bindParam(1, $cusName, PDO::PARAM_STR);
+        $add_customer_query->bindParam(2, $cusEmail, PDO::PARAM_STR);
+        $add_customer_query->bindParam(3, $cusPassword, PDO::PARAM_STR);
+        $add_customer_query->bindParam(4, $cusPhone, PDO::PARAM_STR);
+        $insert = $add_customer_query->execute();
 
         if (!$insert) {
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'customer not added'
+                'message' => 'custo_mer not added'
             );
             return $response->withJson($data);
         }
@@ -57,7 +53,7 @@ $app->post('/api/customer/signup', function (Request $request, Response $respons
         $data = array(
             'status' => 'ok',
             'data' => $db->lastInsertId(),
-            'message' => 'customer is added'
+            'message' => 'custo_mer is added'
         );
         return $response->withJson($data);
 

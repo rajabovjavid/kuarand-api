@@ -4,8 +4,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-// get customer name by email
-$app->get('/api/customer/getName/{email}', function (Request $request, Response $response, $args) {
+// get custo_mer name by email
+$app->get('/api/custo_mer/getName/{email}', function (Request $request, Response $response, $args) {
 
     $cusEmail = $args['email'];
 
@@ -27,7 +27,7 @@ $app->get('/api/customer/getName/{email}', function (Request $request, Response 
         if($customer==null){
             $data = array(
                 'status' => 'error',
-                'message' => "no customer with that email"
+                'message' => "no custo_mer with that email"
             );
             return $response->withJson($data);
         }

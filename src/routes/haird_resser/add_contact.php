@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 //add hd contact
-$app->post('/api/hairdresser/add_contact/{hd_id}', function (Request $request, Response $response, $args){
+$app->post('/api/haird_resser/add_contact/{hd_id}', function (Request $request, Response $response, $args){
     $hdId = $args["hd_id"];
     $hdContact = $request->getParam('hd_contact');
     $hdContactType = $request->getParam('hd_contact_type');

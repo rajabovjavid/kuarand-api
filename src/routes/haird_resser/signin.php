@@ -4,8 +4,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-// hairdresser sign in
-$app->post('/api/hairdresser/signin', function (Request $request, Response $response) {
+// haird_resser sign in
+$app->post('/api/haird_resser/signin', function (Request $request, Response $response) {
     $hdEmail = $request->getParam('hd_email');
     $hdPassword = md5($request->getParam('hd_password'));
 
@@ -35,7 +35,7 @@ $app->post('/api/hairdresser/signin', function (Request $request, Response $resp
             $data = array(
                 'status' => 'ok',
                 'data' => $hairdresser,
-                'message' => 'hairdresser is signed in'
+                'message' => 'haird_resser is signed in'
             );
             return $response->withJson($data);
         }

@@ -44,17 +44,24 @@ function callAPI($method, $url, $data){
     return $result;
 }
 
-//customer routes
-require '../src/routes/customer/get_all.php';
-require '../src/routes/customer/get_name_by_email.php';
-require '../src/routes/customer/signup.php';
-require '../src/routes/customer/signin.php';
+// admin
+require '../src/routes/Admin/addAdmin.php';
+require '../src/routes/Admin/updateAdmin.php';
+require '../src/routes/Admin/deleteAdmin.php';
 
-//hairdresser routes
-require '../src/routes/hairdresser/signup.php';
-require '../src/routes/hairdresser/add_address.php';
-require '../src/routes/hairdresser/add_contact.php';
-require '../src/routes/hairdresser/signin.php';
+//custo_mer routes
+require '../src/routes/custo_mer/get_all.php';
+require '../src/routes/custo_mer/get_name_by_email.php';
+require '../src/routes/custo_mer/get_customer_by_id.php';
+require '../src/routes/custo_mer/signup.php';
+require '../src/routes/custo_mer/signin.php';
+
+//haird_resser routes
+require '../src/routes/haird_resser/signup.php';
+require '../src/routes/haird_resser/add_address.php';
+require '../src/routes/haird_resser/add_contact.php';
+require '../src/routes/haird_resser/signin.php';
+require '../src/routes/haird_resser/get_hds_count.php';
 
 
 $app->run();

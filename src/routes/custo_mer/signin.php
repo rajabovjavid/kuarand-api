@@ -4,8 +4,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-// customer sign in
-$app->post('/api/customer/signin', function (Request $request, Response $response){
+// custo_mer sign in
+$app->post('/api/custo_mer/signin', function (Request $request, Response $response){
     $cusEmail = $request->getParam('cus_email');
     $cusPassword = md5($request->getParam('cus_password'));
 
@@ -29,24 +29,21 @@ $app->post('/api/customer/signin', function (Request $request, Response $respons
         $row_count = $get_customer_query->rowCount();
 
         if($row_count==1){
-
             $customer = $get_customer_query->fetch(PDO::FETCH_OBJ);
 
             $data = array(
                 'status' => 'ok',
                 'data' => $customer,
-                'message' => 'customer is signed in'
+                'message' => 'custo_mer is signed in'
             );
             return $response->withJson($data);
         }
-        else{
-            $data = array(
-                'status' => 'error',
-                'error_code' => 1,
-                'message' => 'customer is not signed in'
-            );
-            return $response->withJson($data);
-        }
+        $data = array(
+            'status' => 'error',
+            'error_code' => 1,
+            'message' => 'custo_mer email or password is incorrect'
+        );
+        return $response->withJson($data);
     }
     catch (PDOException $e){
         echo '{"error": {"text": ' . $e->getMessage() . '}';

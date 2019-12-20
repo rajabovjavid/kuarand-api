@@ -3,8 +3,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-// hairdresser signup
-$app->post('/api/hairdresser/signup', function (Request $request, Response $response) {
+// haird_resser signup
+$app->post('/api/haird_resser/signup', function (Request $request, Response $response) {
 
     $hdName = $request->getParam('hd_name');
     $hdEmail = $request->getParam('hd_email');
@@ -59,11 +59,11 @@ $app->post('/api/hairdresser/signup', function (Request $request, Response $resp
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'hairdresser is not added'
+                'message' => 'haird_resser is not added'
             );
             return $response->withJson($data);
         }
-        // hairdresser is added successfully
+        // haird_resser is added successfully
 
         // make array for adding address
         $data_address_array = array(
@@ -75,8 +75,8 @@ $app->post('/api/hairdresser/signup', function (Request $request, Response $resp
         );
         $hd_id = $db->lastInsertId();
 
-        // curl request to add address to hairdresser
-        $make_call_address = callAPI('POST', 'http://localhost/rest_api_slim/public/api/hairdresser/add_address/'.$hd_id, json_encode($data_address_array));
+        // curl request to add address to haird_resser
+        $make_call_address = callAPI('POST', 'http://localhost/rest_api_slim/public/api/haird_resser/add_address/'.$hd_id, json_encode($data_address_array));
         $response_of_address = json_decode($make_call_address, true);
 
         // make array for adding contact
@@ -85,8 +85,8 @@ $app->post('/api/hairdresser/signup', function (Request $request, Response $resp
             "hd_contact_type" => 0
         );
 
-        // curl request to add contact to hairdresser
-        $make_call_contact = callAPI('POST', 'http://localhost/rest_api_slim/public/api/hairdresser/add_contact/'.$hd_id, json_encode($data_contact_array));
+        // curl request to add contact to haird_resser
+        $make_call_contact = callAPI('POST', 'http://localhost/rest_api_slim/public/api/haird_resser/add_contact/'.$hd_id, json_encode($data_contact_array));
         $response_of_contact = json_decode($make_call_contact, true);
 
         // checking whether one of address/contact is added or not
@@ -94,7 +94,7 @@ $app->post('/api/hairdresser/signup', function (Request $request, Response $resp
             $data = array(
                 'status' => 'ok',
                 'data' => $db->lastInsertId(),
-                'message' => 'hairdresser is added, address is added, but contact could not be added'
+                'message' => 'haird_resser is added, address is added, but contact could not be added'
             );
             return $response->withJson($data);
         }
@@ -102,16 +102,16 @@ $app->post('/api/hairdresser/signup', function (Request $request, Response $resp
             $data = array(
                 'status' => 'ok',
                 'data' => $db->lastInsertId(),
-                'message' => 'hairdresser is added, but address could not be added'
+                'message' => 'haird_resser is added, but address could not be added'
             );
             return $response->withJson($data);
         }
 
-        // hairdresser is added successfully
+        // haird_resser is added successfully
         $data = array(
             'status' => 'ok',
             'data' => $db->lastInsertId(),
-            'message' => 'hairdresser is added completely'
+            'message' => 'haird_resser is added completely'
         );
         return $response->withJson($data);
 

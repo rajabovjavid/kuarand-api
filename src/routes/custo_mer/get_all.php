@@ -18,9 +18,15 @@ $app->get('/api/customers', function (Request $request, Response $response) {
         $customer_query->execute();
         $customers = $customer_query->fetchAll(PDO::FETCH_OBJ);
 
-        return $response->withStatus(200)
+        $data = array(
+            'status' => 'ok',
+            'data' => $customers
+        );
+        return $response->withJson($data);
+
+        /* return $response->withStatus(200)
             ->withHeader('Content-Type', 'application/json')
-            ->write(json_encode($customers));
+            ->write(json_encode($customers)); */
     } catch (PDOException $e) {
         echo '{"error": {"text": ' . $e->getMessage() . '}';
     }

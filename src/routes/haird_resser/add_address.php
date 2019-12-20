@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 //add hd address
-$app->post('/api/hairdresser/add_address/{hd_id}', function (Request $request, Response $response, $args){
+$app->post('/api/haird_resser/add_address/{hd_id}', function (Request $request, Response $response, $args){
     $hdId = $args["hd_id"];
     $hdAddressCity = $request->getParam('address_city');
     $hdAddressRegion = $request->getParam('address_region');
