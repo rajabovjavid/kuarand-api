@@ -32,7 +32,7 @@ $app->post('/api/admin/deleteAdmin', function (Request $request, Response $respo
         }
 
 
-        // add admin
+        // delete admin
         $delete_admin_query = $db->prepare("CALL deleteAdmin(?)");
         $delete_admin_query->bindParam(1, $adminEmail, PDO::PARAM_STR);
         $delete = $delete_admin_query->execute();
