@@ -49,14 +49,17 @@ require '../src/routes/Admin/addAdmin.php';
 require '../src/routes/Admin/updateAdmin.php';
 require '../src/routes/Admin/deleteAdmin.php';
 
-//custo_mer routes
+//customer routes
+require '../src/routes/Customer/addCustomer.php';
+require '../src/routes/Customer/deleteCustomer.php';
+
 require '../src/routes/custo_mer/get_all.php';
 require '../src/routes/custo_mer/get_name_by_email.php';
 require '../src/routes/custo_mer/get_customer_by_id.php';
 require '../src/routes/custo_mer/signup.php';
 require '../src/routes/custo_mer/signin.php';
 
-//haird_resser routes
+//hairdresser routes
 require '../src/routes/haird_resser/signup.php';
 require '../src/routes/haird_resser/add_address.php';
 require '../src/routes/haird_resser/add_contact.php';
