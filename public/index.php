@@ -70,4 +70,16 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
+
+
+//Reservation routes
+require  '../src/routes/Reservation/addReservation.php';
+require  '../src/routes/Reservation/deleteReservation.php';
+
+//Service routes
+require '../src/routes/Service/addService.php';
+require '../src/routes/Service/deleteService.php';
+require '../src/routes/Service/updateService.php';
+
+
 $app->run();

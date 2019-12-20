@@ -36,7 +36,7 @@ $app->post('/api/admin/updateAdmin', function (Request $request, Response $respo
         }
 
 
-        // add admin
+        // update admin
         $update_admin_query = $db->prepare("CALL updateAdmin(?, ?, ?, ?)");
         $update_admin_query->bindParam(1, $adminEmail, PDO::PARAM_STR);
         $update_admin_query->bindParam(2, $adminName, PDO::PARAM_STR);
