@@ -60,6 +60,9 @@ require '../src/routes/custo_mer/signup.php';
 require '../src/routes/custo_mer/signin.php';
 
 //hairdresser routes
+require '../src/routes/Hairdresser/addHairdresser.php';
+require '../src/routes/Hairdresser/updateHairdresser.php';
+require '../src/routes/Hairdresser/deleteHairdresser.php';
 require '../src/routes/haird_resser/signup.php';
 require '../src/routes/haird_resser/add_address.php';
 require '../src/routes/haird_resser/add_contact.php';
