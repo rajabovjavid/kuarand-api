@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 $app->post('/api/hdGallery/addHdGallery', function (Request $request, Response $response) {
 
     $hdId = $request->getParam('hd_id');
-    $hdPhoto = $request->getParam('hd_photo');
+    $hdPhoto = fopen($request->getParam('hd_photo'), "rb");
     $hdPhotoPriority = $request->getParam('hdPhoto_priority');
 
     try{
@@ -18,7 +18,7 @@ $app->post('/api/hdGallery/addHdGallery', function (Request $request, Response $
         // add reservation
         $add_hdGallery_query = $db->prepare("CALL addHdGallery(?, ?, ?)");
         $add_hdGallery_query->bindParam(1, $hdId, PDO::PARAM_INT);
-        $add_hdGallery_query->bindParam(2, $hdPhoto, PDO::PARAM_STR);
+        $add_hdGallery_query->bindParam(2, $hdPhoto, PDO::PARAM_LOB);
         $add_hdGallery_query->bindParam(3, $hdPhotoPriority, PDO::PARAM_INT);
         $add = $add_hdGallery_query->execute();
 
