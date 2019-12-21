@@ -67,6 +67,12 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
+
+//HdPromotion routes
+require '../src/routes/HdPromotion/addHdPromotion.php';
+require '../src/routes/HdPromotion/deleteHdPromotion.php';
+require '../src/routes/HdPromotion/updateHdPromotion.php';
+
 //HdWorkHour routes
 require  '../src/routes/HdWorkHour/addHdWorkHour.php';
 require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
