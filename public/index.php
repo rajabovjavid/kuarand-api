@@ -52,6 +52,24 @@ require '../src/routes/Admin/deleteAdmin.php';
 //customer routes
 require '../src/routes/Customer/addCustomer.php';
 require '../src/routes/Customer/deleteCustomer.php';
+require '../src/routes/Customer/updateCustomer.php';
+
+// commentReply routes
+require '../src/routes/CommentReply/addCommentReply.php';
+require '../src/routes/CommentReply/deleteCommentReply.php';
+require '../src/routes/CommentReply/updateCommentReply.php';
+
+// employee routes
+require '../src/routes/Employee/addEmployee.php';
+require '../src/routes/Employee/deleteEmployee.php';
+require '../src/routes/Employee/updateEmployee.php';
+
+// employee services routes
+require '../src/routes/EmployeeServices/addEmployeeService.php';
+require '../src/routes/EmployeeServices/deleteEmployeeService.php';
+require '../src/routes/EmployeeServices/updateEmployeeService.php';
+
+
 
 require '../src/routes/custo_mer/get_all.php';
 require '../src/routes/custo_mer/get_name_by_email.php';
@@ -70,11 +88,25 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
+//HdGallery routes
+require '../src/routes/HdGallery/addHdGallery.php';
+require '../src/routes/HdGallery/deleteHdGallery.php';
+require '../src/routes/HdGallery/updateHdGallery.php';
 
+//HdPromotion routes
+require '../src/routes/HdPromotion/addHdPromotion.php';
+require '../src/routes/HdPromotion/deleteHdPromotion.php';
+require '../src/routes/HdPromotion/updateHdPromotion.php';
+
+//HdWorkHour routes
+require  '../src/routes/HdWorkHour/addHdWorkHour.php';
+require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
+require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
 require  '../src/routes/Reservation/deleteReservation.php';
+require  '../src/routes/Reservation/updateReservation.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';

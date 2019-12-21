@@ -3,9 +3,11 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/reservation/deleteReservation', function (Request $request, Response $response){
+$app->post('/api/reservation/updateReservation', function (Request $request, Response $response) {
 
-    $reservationId= $request->getParam('reservation_id');
+    $reservationId = $request->getParam('reservation_id');
+    $serId = $request->getParam('ser_id');
+    $reservationDate = $request->getParam('reservation_date');
 
     try{
         // Get DB Object
@@ -30,23 +32,26 @@ $app->post('/api/reservation/deleteReservation', function (Request $request, Res
             return $response->withJson($data);
         }
 
-        // delete reservation
-        $delete_reservation_query = $db->prepare("CALL deleteReservation(?)");
-        $delete_reservation_query->bindParam(1, $reservationId, PDO::PARAM_INT);
-        $delete = $delete_reservation_query->execute();
+        // update reservation
+        $update_reservation_query = $db->prepare("CALL updateReservation(?, ?, ?)");
+        $update_reservation_query->bindParam(1, $reservationId, PDO::PARAM_INT);
+        $update_reservation_query->bindParam(2, $serId, PDO::PARAM_INT);
+        $update_reservation_query->bindParam(3, $reservationDate, PDO::PARAM_STR);
+        $update = $update_reservation_query->execute();
 
-        if (!$delete) {
+
+        if (!$update) {
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'reservation is not deleted'
+                'message' => 'reservation is not updated'
             );
             return $response->withJson($data);
         }
 
         $data = array(
             'status' => 'ok',
-            'message' => 'reservation is deleted'
+            'message' => 'reservation is updated'
         );
         return $response->withJson($data);
 
@@ -55,7 +60,5 @@ $app->post('/api/reservation/deleteReservation', function (Request $request, Res
     catch (PDOException $e) {
         echo '{"error": {"text": ' . $e->getMessage() . '}';
     }
-
-
 
 });

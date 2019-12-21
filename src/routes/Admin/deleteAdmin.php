@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-$app->post('/api/admin/deleteAdmin', function (Request $request, Response $response) {
+$app->delete('/api/admin/deleteAdmin', function (Request $request, Response $response) {
 
     $adminEmail = $request->getParam('admin_email');
 
