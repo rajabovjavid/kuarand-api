@@ -72,6 +72,7 @@ require '../src/routes/haird_resser/get_hds_count.php';
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
 require  '../src/routes/Reservation/deleteReservation.php';
+require  '../src/routes/Reservation/updateReservation.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';
