@@ -67,7 +67,10 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
-
+//HdWorkHour routes
+require  '../src/routes/HdWorkHour/addHdWorkHour.php';
+require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
+require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
