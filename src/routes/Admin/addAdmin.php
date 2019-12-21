@@ -13,9 +13,9 @@ $app->post('/api/admin/addAdmin', function (Request $request, Response $response
 
     try {
         // Get DB Object
-        $db = new db();
+        $db_obj = new db();
         // Connect
-        $db = $db->connect();
+        $db = $db_obj->connect();
 
         // check whether that email is used or not
         $get_admin_query = $db->prepare("select * from Admin where adminEmail=:mail");
@@ -42,6 +42,7 @@ $app->post('/api/admin/addAdmin', function (Request $request, Response $response
         $add_admin_query->bindParam(3, $adminType, PDO::PARAM_INT);
         $add_admin_query->bindParam(4, $adminPassword, PDO::PARAM_STR);
         $add = $add_admin_query->execute();
+        $result = $add_admin_query->fetch(PDO::FETCH_OBJ);
 
         if (!$add) {
             $data = array(
@@ -54,7 +55,7 @@ $app->post('/api/admin/addAdmin', function (Request $request, Response $response
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
+            'data' => $result->last_insert,
             'message' => 'admin is added'
         );
         return $response->withJson($data);
