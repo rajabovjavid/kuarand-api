@@ -81,11 +81,17 @@ require '../src/routes/custo_mer/signin.php';
 require '../src/routes/Hairdresser/addHairdresser.php';
 require '../src/routes/Hairdresser/updateHairdresser.php';
 require '../src/routes/Hairdresser/deleteHairdresser.php';
+
 require '../src/routes/haird_resser/signup.php';
 require '../src/routes/haird_resser/add_address.php';
 require '../src/routes/haird_resser/add_contact.php';
 require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
+
+// hairdresser services routes
+require '../src/routes/HairdresserServices/addHairdresserService.php';
+require '../src/routes/HairdresserServices/deleteHairdresserService.php';
+require '../src/routes/HairdresserServices/updateHairdresserService.php';
 
 
 //HdGallery routes
