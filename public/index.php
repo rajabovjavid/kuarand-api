@@ -88,11 +88,25 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
+//HdGallery routes
+require '../src/routes/HdGallery/addHdGallery.php';
+require '../src/routes/HdGallery/deleteHdGallery.php';
+require '../src/routes/HdGallery/updateHdGallery.php';
 
+//HdPromotion routes
+require '../src/routes/HdPromotion/addHdPromotion.php';
+require '../src/routes/HdPromotion/deleteHdPromotion.php';
+require '../src/routes/HdPromotion/updateHdPromotion.php';
+
+//HdWorkHour routes
+require  '../src/routes/HdWorkHour/addHdWorkHour.php';
+require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
+require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
 require  '../src/routes/Reservation/deleteReservation.php';
+require  '../src/routes/Reservation/updateReservation.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';
