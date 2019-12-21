@@ -67,6 +67,10 @@ require '../src/routes/haird_resser/signin.php';
 require '../src/routes/haird_resser/get_hds_count.php';
 
 
+//HdGallery routes
+require '../src/routes/HdGallery/addHdGallery.php';
+require '../src/routes/HdGallery/deleteHdGallery.php';
+require '../src/routes/HdGallery/updateHdGallery.php';
 
 //HdPromotion routes
 require '../src/routes/HdPromotion/addHdPromotion.php';
