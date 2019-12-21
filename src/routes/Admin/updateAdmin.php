@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-$app->post('/api/admin/updateAdmin', function (Request $request, Response $response) {
+$app->put('/api/admin/updateAdmin', function (Request $request, Response $response) {
 
     $adminName = $request->getParam('admin_name');
     $adminEmail = $request->getParam('admin_email');
