@@ -93,6 +93,11 @@ require '../src/routes/HairdresserServices/addHairdresserService.php';
 require '../src/routes/HairdresserServices/deleteHairdresserService.php';
 require '../src/routes/HairdresserServices/updateHairdresserService.php';
 
+// hdComment routes
+require '../src/routes/HdComment/addHdComment.php';
+require '../src/routes/HdComment/deleteHdComment.php';
+require '../src/routes/HdComment/updateHdComment.php';
+
 
 //HdGallery routes
 require '../src/routes/HdGallery/addHdGallery.php';
