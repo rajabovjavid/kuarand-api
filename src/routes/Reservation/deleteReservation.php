@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/reservation/deleteReservation', function (Request $request, Response $response){
+$app->delete('/api/reservation/deleteReservation', function (Request $request, Response $response){
 
     $reservationId= $request->getParam('reservation_id');
 

@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hdPromotion/deleteHdPromotion', function (Request $request, Response $response) {
+$app->delete('/api/hdPromotion/deleteHdPromotion', function (Request $request, Response $response) {
 
     $hdPromoId= $request->getParam('hdPromo_id');
 

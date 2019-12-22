@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hdGallery/deleteHdGallery', function (Request $request, Response $response) {
+$app->delete('/api/hdGallery/deleteHdGallery', function (Request $request, Response $response) {
 
     $hdGalleryId= $request->getParam('hdGallery_id');
 

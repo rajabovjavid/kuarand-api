@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hdGallery/updateHdGallery', function (Request $request, Response $response) {
+$app->put('/api/hdGallery/updateHdGallery', function (Request $request, Response $response) {
 
     $hdGalleryId = $request->getParam('hdGallery_id');
     $hdPhoto = fopen($request->getParam('hd_photo'), "rb");

@@ -19,12 +19,12 @@ $app->post('/api/reservation/addReservation', function (Request $request, Respon
 
 
         // add reservation
-        $add_service_query = $db->prepare("CALL addReservation(?, ?, ?, ?)");
-        $add_service_query->bindParam(1, $customerID, PDO::PARAM_INT);
-        $add_service_query->bindParam(2, $hdId, PDO::PARAM_INT);
-        $add_service_query->bindParam(3, $serId, PDO::PARAM_INT);
-        $add_service_query->bindParam(4, $reservationDate, PDO::PARAM_STR);
-        $add = $add_service_query->execute();
+        $add_reservation_query = $db->prepare("CALL addReservation(?, ?, ?, ?)");
+        $add_reservation_query->bindParam(1, $customerID, PDO::PARAM_INT);
+        $add_reservation_query->bindParam(2, $hdId, PDO::PARAM_INT);
+        $add_reservation_query->bindParam(3, $serId, PDO::PARAM_INT);
+        $add_reservation_query->bindParam(4, $reservationDate, PDO::PARAM_STR);
+        $add = $add_reservation_query->execute();
 
         if (!$add) {
             $data = array(
@@ -37,7 +37,6 @@ $app->post('/api/reservation/addReservation', function (Request $request, Respon
 
             $data = array(
                 'status' => 'ok',
-                'data' => $db->lastInsertId(),
                 'message' => 'reservation is added'
              );
             return $response->withJson($data);

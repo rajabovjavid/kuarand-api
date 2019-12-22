@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hdPromotion/updateHdPromotion', function (Request $request, Response $response) {
+$app->put('/api/hdPromotion/updateHdPromotion', function (Request $request, Response $response) {
 
     $hdPromoId = $request->getParam('hdPromo_id');
     $hdPromoDiscount = $request->getParam('promo_discount');

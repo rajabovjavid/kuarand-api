@@ -35,7 +35,6 @@ $app->post('/api/hdWorkHour/addHdWorkHour', function (Request $request, Response
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'hdWorkHour is added'
         );
         return $response->withJson($data);

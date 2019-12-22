@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-$app->post('/api/service/updateService', function (Request $request, Response $response) {
+$app->put('/api/service/updateService', function (Request $request, Response $response) {
 
     $serId = $request->getParam('ser_id');
     $serName = $request->getParam('ser_name');

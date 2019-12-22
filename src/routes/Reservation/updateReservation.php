@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/reservation/updateReservation', function (Request $request, Response $response) {
+$app->put('/api/reservation/updateReservation', function (Request $request, Response $response) {
 
     $reservationId = $request->getParam('reservation_id');
     $serId = $request->getParam('ser_id');

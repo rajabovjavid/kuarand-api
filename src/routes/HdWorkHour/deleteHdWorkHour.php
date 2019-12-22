@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hdWorkHour/deleteHdWorkHour', function (Request $request, Response $response) {
+$app->delete('/api/hdWorkHour/deleteHdWorkHour', function (Request $request, Response $response) {
 
     $hdId= $request->getParam('hd_id');
     $day= $request->getParam('work_day');

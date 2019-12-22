@@ -33,7 +33,6 @@ $app->post('/api/service/addService', function (Request $request, Response $resp
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'service is added'
         );
         return $response->withJson($data);

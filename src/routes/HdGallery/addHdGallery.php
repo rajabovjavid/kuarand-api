@@ -33,7 +33,6 @@ $app->post('/api/hdGallery/addHdGallery', function (Request $request, Response $
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'hdGallery is added'
         );
         return $response->withJson($data);

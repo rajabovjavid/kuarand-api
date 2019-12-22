@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/service/deleteService', function (Request $request, Response $response) {
+$app->delete('/api/service/deleteService', function (Request $request, Response $response) {
 
     $serId= $request->getParam('ser_id');
 

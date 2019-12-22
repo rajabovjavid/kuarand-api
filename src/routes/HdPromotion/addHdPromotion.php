@@ -35,7 +35,6 @@ $app->post('/api/hdPromotion/addHdPromotion', function (Request $request, Respon
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'hdPromotion is added'
         );
         return $response->withJson($data);
