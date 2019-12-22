@@ -3,9 +3,9 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->delete('/api/hdContact/deleteHdContact', function (Request $request, Response $response) {
+$app->delete('/api/hdAddress/deleteHdAddress', function (Request $request, Response $response) {
 
-    $hdContactId= $request->getParam('hd_contact_id');
+    $hdId= $request->getParam('hd_id');
 
     try {
         // Get DB Object
@@ -13,24 +13,24 @@ $app->delete('/api/hdContact/deleteHdContact', function (Request $request, Respo
         // Connect
         $db = $db->connect();
 
-        // delete hd contact
-        $delete_hdContact_query = $db->prepare("CALL deleteHdContact(?)");
-        $delete_hdContact_query->bindParam(1, $hdContactId, PDO::PARAM_INT);
-        $delete = $delete_hdContact_query->execute();
+        // delete hd address
+        $delete_hdAddress_query = $db->prepare("CALL deleteHdAddress(?)");
+        $delete_hdAddress_query->bindParam(1, $hdId, PDO::PARAM_INT);
+        $delete = $delete_hdAddress_query->execute();
 
 
         if (!$delete) {
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'hd contact is not deleted'
+                'message' => 'hd address is not deleted'
             );
             return $response->withJson($data);
         }
 
         $data = array(
             'status' => 'ok',
-            'message' => 'hd contact is deleted'
+            'message' => 'hd address is deleted'
         );
         return $response->withJson($data);
 

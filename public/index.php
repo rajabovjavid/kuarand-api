@@ -95,6 +95,8 @@ require '../src/routes/HairdresserServices/updateHairdresserService.php';
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
+require '../src/routes/HdAddress/deleteHdAddress.php';
+require '../src/routes/HdAddress/updateHdAddress.php';
 
 // hdComment routes
 require '../src/routes/HdComment/addHdComment.php';
@@ -103,6 +105,8 @@ require '../src/routes/HdComment/updateHdComment.php';
 
 // hdContact routes
 require '../src/routes/HdContact/addHdContact.php';
+require '../src/routes/HdContact/deleteHdContact.php';
+require '../src/routes/HdContact/updateHdContact.php';
 
 //HdGallery routes
 require '../src/routes/HdGallery/addHdGallery.php';
