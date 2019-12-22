@@ -34,7 +34,6 @@ $app->post('/api/hdComment/addHdComment', function (Request $request, Response $
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'hd comment is added'
         );
         return $response->withJson($data);

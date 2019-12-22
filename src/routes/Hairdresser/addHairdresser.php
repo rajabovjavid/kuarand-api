@@ -51,7 +51,6 @@ $app->post('/api/hairdresser/addHairdresser', function (Request $request, Respon
         $add_hairdresser_query->bindParam(8, $hdAddressStreet, PDO::PARAM_STR);
         $add_hairdresser_query->bindParam(9, $hdAddressOtherInfo, PDO::PARAM_STR);
         $add = $add_hairdresser_query->execute();
-        $result = $add_hairdresser_query->fetchAll(PDO::FETCH_OBJ);
 
         if (!$add) {
             $data = array(
@@ -64,7 +63,6 @@ $app->post('/api/hairdresser/addHairdresser', function (Request $request, Respon
 
         $data = array(
             'status' => 'ok',
-            'data' => $result,
             'message' => 'hairdresser is added'
         );
         return $response->withJson($data);
