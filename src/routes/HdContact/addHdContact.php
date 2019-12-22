@@ -3,9 +3,9 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->post('/api/hairdresser/add_contact/{hd_id}', function (Request $request, Response $response, $args) {
+$app->post('/api/hdContact/addHdContact', function (Request $request, Response $response) {
 
-    $hdId = $args["hd_id"];
+    $hdId = $request->getParam("hd_id");
     $hdContactType = $request->getParam('hd_contact_type');
     $hdContact = $request->getParam('hd_contact');
 
@@ -16,11 +16,11 @@ $app->post('/api/hairdresser/add_contact/{hd_id}', function (Request $request, R
         $db = $db_obj->connect();
 
         // add hd contact
-        $add_hdcontact_query = $db->prepare("CALL addHdContact(?, ?, ?)");
-        $add_hdcontact_query->bindParam(1, $hdId, PDO::PARAM_INT);
-        $add_hdcontact_query->bindParam(2, $hdContactType, PDO::PARAM_INT);
-        $add_hdcontact_query->bindParam(3, $hdContact, PDO::PARAM_STR);
-        $add = $add_hdcontact_query->execute();
+        $add_hdContact_query = $db->prepare("CALL addHdContact(?, ?, ?)");
+        $add_hdContact_query->bindParam(1, $hdId, PDO::PARAM_INT);
+        $add_hdContact_query->bindParam(2, $hdContactType, PDO::PARAM_INT);
+        $add_hdContact_query->bindParam(3, $hdContact, PDO::PARAM_STR);
+        $add = $add_hdContact_query->execute();
 
         if (!$add) {
             $data = array(
