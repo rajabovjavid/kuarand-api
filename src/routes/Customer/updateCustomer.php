@@ -8,7 +8,7 @@ $app->put('/api/customer/updateCustomer', function (Request $request, Response $
 
     $customerName = $request->getParam('cus_name');
     $customerEmail = $request->getParam('cus_email');
-    $customerPassword = md5($request->getParam('cus_password'));
+    if($request->getParam('cus_password') != '') $customerPassword = md5($request->getParam('cus_password'));
     $customerPhone = $request->getParam('cus_phone');
 
 
@@ -23,7 +23,7 @@ $app->put('/api/customer/updateCustomer', function (Request $request, Response $
         $get_customer_query->execute(array(
             'mail' => $customerEmail
         ));
-
+        $customer = $get_customer_query->fetch(PDO::FETCH_OBJ);
         $row_count = $get_customer_query->rowCount();
 
         if ($row_count == 0) {
@@ -35,6 +35,7 @@ $app->put('/api/customer/updateCustomer', function (Request $request, Response $
             return $response->withJson($data);
         }
 
+        if($customerPassword==null){$customerPassword = $customer->customerPassword;}
 
         // update customer
         $update_customer_query = $db->prepare("CALL updateCustomer(?, ?, ?, ?)");

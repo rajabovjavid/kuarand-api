@@ -8,9 +8,16 @@ $app->put('/api/hairdresser/updateHairdresser', function (Request $request, Resp
 
     $hdName = $request->getParam('hd_name');
     $hdEmail = $request->getParam('hd_email');
-    $hdPassword = md5($request->getParam('hd_password'));
+    if($request->getParam('hd_password') != '') $hdPassword = md5($request->getParam('hd_password'));
     $hdType = $request->getParam('hd_type');
     $hdStatus = $request->getParam('hd_status');
+
+    /*$data = array(
+        'status' => 'ok',
+        'data' => $hdPassword
+    );
+    return $response->withJson($data);*/
+
 
     try {
         // Get DB Object
@@ -23,7 +30,7 @@ $app->put('/api/hairdresser/updateHairdresser', function (Request $request, Resp
         $get_hairdresser_query->execute(array(
             'mail' => $hdEmail
         ));
-
+        $hairdresser = $get_hairdresser_query->fetch(PDO::FETCH_OBJ);
         $row_count = $get_hairdresser_query->rowCount();
 
         if ($row_count == 0) {
@@ -34,6 +41,8 @@ $app->put('/api/hairdresser/updateHairdresser', function (Request $request, Resp
             );
             return $response->withJson($data);
         }
+
+        if($hdPassword==null){$hdPassword = $hairdresser->hdPassword;}
 
 
         // update hairdresser
