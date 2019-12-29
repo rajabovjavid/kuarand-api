@@ -53,6 +53,9 @@ require '../src/routes/Admin/deleteAdmin.php';
 require '../src/routes/Customer/addCustomer.php';
 require '../src/routes/Customer/deleteCustomer.php';
 require '../src/routes/Customer/updateCustomer.php';
+require '../src/routes/Customer/filterCustomersWithName.php';
+require '../src/routes/Customer/getAllCustomers.php';
+require '../src/routes/Customer/getCustomerById.php';
 
 // commentReply routes
 require '../src/routes/CommentReply/addCommentReply.php';
@@ -81,6 +84,10 @@ require '../src/routes/custo_mer/signin.php';
 require '../src/routes/Hairdresser/addHairdresser.php';
 require '../src/routes/Hairdresser/updateHairdresser.php';
 require '../src/routes/Hairdresser/deleteHairdresser.php';
+require '../src/routes/Hairdresser/getAllHairdressers.php';
+require '../src/routes/Hairdresser/getHairdresserById.php';
+require '../src/routes/Hairdresser/getHairdressersByStatus.php';
+require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 
 require '../src/routes/haird_resser/signup.php';
 require '../src/routes/haird_resser/add_address.php';
@@ -132,6 +139,9 @@ require  '../src/routes/Reservation/updateReservation.php';
 require '../src/routes/Service/addService.php';
 require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
+
+//other
+require '../src/routes/getStatistics.php';
 
 
 $app->run();
