@@ -52,7 +52,6 @@ $app->post('/api/customer/addCustomer', function (Request $request, Response $re
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'customer is added'
         );
         return $response->withJson($data);
