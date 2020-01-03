@@ -70,6 +70,9 @@ require '../src/routes/CommentReply/getCommentReplyById.php';
 require '../src/routes/Employee/addEmployee.php';
 require '../src/routes/Employee/deleteEmployee.php';
 require '../src/routes/Employee/updateEmployee.php';
+require '../src/routes/Employee/getAllEmployees.php';
+require '../src/routes/Employee/getEmployeeById.php';
+
 
 // employee services routes
 require '../src/routes/EmployeeServices/addEmployeeService.php';
