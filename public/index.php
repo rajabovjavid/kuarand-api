@@ -103,16 +103,22 @@ require '../src/routes/haird_resser/get_hds_count.php';
 require '../src/routes/HairdresserServices/addHairdresserService.php';
 require '../src/routes/HairdresserServices/deleteHairdresserService.php';
 require '../src/routes/HairdresserServices/updateHairdresserService.php';
+require '../src/routes/HairdresserServices/getAllHairdresserServices.php';
+require '../src/routes/HairdresserServices/getHairdresserServicesById.php';
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
 require '../src/routes/HdAddress/deleteHdAddress.php';
 require '../src/routes/HdAddress/updateHdAddress.php';
+require '../src/routes/HdAddress/getAllHdAddresses.php';
+require '../src/routes/HdAddress/getHdAddressById.php';
 
 // hdComment routes
 require '../src/routes/HdComment/addHdComment.php';
 require '../src/routes/HdComment/deleteHdComment.php';
 require '../src/routes/HdComment/updateHdComment.php';
+require '../src/routes/HdComment/getAllHdComments.php';
+require '../src/routes/HdComment/getHdCommentById.php';
 
 // hdContact routes
 require '../src/routes/HdContact/addHdContact.php';
