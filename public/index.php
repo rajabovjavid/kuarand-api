@@ -127,26 +127,38 @@ require '../src/routes/HdContact/getHdContactById.php';
 require '../src/routes/HdGallery/addHdGallery.php';
 require '../src/routes/HdGallery/deleteHdGallery.php';
 require '../src/routes/HdGallery/updateHdGallery.php';
+require '../src/routes/HdGallery/getAllHdGalleries.php';
+require '../src/routes/HdGallery/getHdGalleryById.php';
+
 
 //HdPromotion routes
 require '../src/routes/HdPromotion/addHdPromotion.php';
 require '../src/routes/HdPromotion/deleteHdPromotion.php';
 require '../src/routes/HdPromotion/updateHdPromotion.php';
+require '../src/routes/HdPromotion/getAllHdPromotions.php';
+require '../src/routes/HdPromotion/getHdPromotionById.php';
+
 
 //HdWorkHour routes
 require  '../src/routes/HdWorkHour/addHdWorkHour.php';
 require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
 require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
+require  '../src/routes/HdWorkHour/getAllHdWorkHours.php';
+require  '../src/routes/HdWorkHour/getHdWorkHourById.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
 require  '../src/routes/Reservation/deleteReservation.php';
 require  '../src/routes/Reservation/updateReservation.php';
+require  '../src/routes/Reservation/getAllReservations.php';
+require  '../src/routes/Reservation/getReservationById.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';
 require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
+require  '../src/routes/Service/getAllServices.php';
+require  '../src/routes/Service/getServiceById.php';
 
 //other
 require '../src/routes/getStatistics.php';
