@@ -114,6 +114,8 @@ require '../src/routes/HdComment/updateHdComment.php';
 require '../src/routes/HdContact/addHdContact.php';
 require '../src/routes/HdContact/deleteHdContact.php';
 require '../src/routes/HdContact/updateHdContact.php';
+require '../src/routes/HdContact/getAllHdContacts.php';
+require '../src/routes/HdContact/getHdContactById.php';
 
 //HdGallery routes
 require '../src/routes/HdGallery/addHdGallery.php';
