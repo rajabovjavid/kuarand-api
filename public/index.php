@@ -78,6 +78,8 @@ require '../src/routes/Employee/getEmployeeById.php';
 require '../src/routes/EmployeeServices/addEmployeeService.php';
 require '../src/routes/EmployeeServices/deleteEmployeeService.php';
 require '../src/routes/EmployeeServices/updateEmployeeService.php';
+require '../src/routes/EmployeeServices/getAllEmployeeServices.php';
+require '../src/routes/EmployeeServices/getEmployeeServicesById.php';
 
 
 
