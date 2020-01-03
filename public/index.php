@@ -48,6 +48,8 @@ function callAPI($method, $url, $data){
 require '../src/routes/Admin/addAdmin.php';
 require '../src/routes/Admin/updateAdmin.php';
 require '../src/routes/Admin/deleteAdmin.php';
+require '../src/routes/Admin/getAllAdmins.php';
+require '../src/routes/Admin/getAdminById.php';
 
 //customer routes
 require '../src/routes/Customer/addCustomer.php';
