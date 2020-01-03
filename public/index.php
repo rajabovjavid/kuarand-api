@@ -109,6 +109,8 @@ require '../src/routes/HdAddress/updateHdAddress.php';
 require '../src/routes/HdComment/addHdComment.php';
 require '../src/routes/HdComment/deleteHdComment.php';
 require '../src/routes/HdComment/updateHdComment.php';
+require '../src/routes/HdComment/getAllHdComments.php';
+require '../src/routes/HdComment/getHdCommentById.php';
 
 // hdContact routes
 require '../src/routes/HdContact/addHdContact.php';
