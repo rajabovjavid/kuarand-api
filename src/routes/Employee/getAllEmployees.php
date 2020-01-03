@@ -12,7 +12,7 @@ $app->get('/api/employee/getAllEmployees', function (Request $request, Response 
         // Connect
         $db = $db->connect();
 
-        $employee_query = $db->prepare("SELECT * FROM Employee");
+        $employee_query = $db->prepare("SELECT employeeId, hdId, employeeName, employeeGender FROM Employee");
         $employee_query->execute();
         $employees = $employee_query->fetchAll(PDO::FETCH_OBJ);
 

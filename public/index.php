@@ -72,7 +72,7 @@ require '../src/routes/Employee/deleteEmployee.php';
 require '../src/routes/Employee/updateEmployee.php';
 require '../src/routes/Employee/getAllEmployees.php';
 require '../src/routes/Employee/getEmployeeById.php';
-
+require '../src/routes/Employee/getEmployeePhotoById.php';
 
 // employee services routes
 require '../src/routes/EmployeeServices/addEmployeeService.php';
@@ -80,7 +80,6 @@ require '../src/routes/EmployeeServices/deleteEmployeeService.php';
 require '../src/routes/EmployeeServices/updateEmployeeService.php';
 require '../src/routes/EmployeeServices/getAllEmployeeServices.php';
 require '../src/routes/EmployeeServices/getEmployeeServicesById.php';
-
 
 
 require '../src/routes/custo_mer/get_all.php';
