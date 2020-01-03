@@ -3,6 +3,7 @@
         "slim/slim": "^3.0",
       "ext-json": "*",
       "ext-pdo": "*",
-      "ext-curl": "*"
+      "ext-curl": "*",
+      "ext-mysqli": "*"
     }
 }
