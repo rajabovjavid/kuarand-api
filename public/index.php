@@ -129,6 +129,8 @@ require '../src/routes/HdPromotion/updateHdPromotion.php';
 require  '../src/routes/HdWorkHour/addHdWorkHour.php';
 require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
 require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
+require  '../src/routes/HdWorkHour/getAllHdWorkHours.php';
+require  '../src/routes/HdWorkHour/getHdWorkHourById.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
