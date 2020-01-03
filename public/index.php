@@ -99,6 +99,8 @@ require '../src/routes/haird_resser/get_hds_count.php';
 require '../src/routes/HairdresserServices/addHairdresserService.php';
 require '../src/routes/HairdresserServices/deleteHairdresserService.php';
 require '../src/routes/HairdresserServices/updateHairdresserService.php';
+require '../src/routes/HairdresserServices/getAllHairdresserServices.php';
+require '../src/routes/HairdresserServices/getHairdresserServicesById.php';
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
