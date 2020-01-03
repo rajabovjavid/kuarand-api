@@ -104,6 +104,8 @@ require '../src/routes/HairdresserServices/updateHairdresserService.php';
 require '../src/routes/HdAddress/addHdAddress.php';
 require '../src/routes/HdAddress/deleteHdAddress.php';
 require '../src/routes/HdAddress/updateHdAddress.php';
+require '../src/routes/HdAddress/getAllHdAddresses.php';
+require '../src/routes/HdAddress/getHdAddressById.php';
 
 // hdComment routes
 require '../src/routes/HdComment/addHdComment.php';
