@@ -6,19 +6,21 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 // get all hdGalleries
 $app->get('/api/hdGallery/getAllHdGalleries', function (Request $request, Response $response) {
 
+
     try {
         // Get DB Object
         $db = new db();
         // Connect
         $db = $db->connect();
 
-        $hdGallery_query = $db->prepare("SELECT * FROM HdGallery");
+        $hdGallery_query = $db->prepare("SELECT hdGalleryId, hdId, hdPhotoPriority FROM HdGallery");
         $hdGallery_query->execute();
-        $hdGalleries = $hdGallery_query->fetchAll(PDO::FETCH_OBJ);
+
+        $result = $hdGallery_query->fetchAll(PDO::FETCH_OBJ);
 
         $data = array(
             'status' => 'ok',
-            'data' => $hdGalleries
+            'data' =>  $result
         );
         return $response->withJson($data);
 

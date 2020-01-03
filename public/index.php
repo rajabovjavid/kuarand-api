@@ -138,6 +138,7 @@ require '../src/routes/HdGallery/deleteHdGallery.php';
 require '../src/routes/HdGallery/updateHdGallery.php';
 require '../src/routes/HdGallery/getAllHdGalleries.php';
 require '../src/routes/HdGallery/getHdGalleryById.php';
+require '../src/routes/HdGallery/getHdGalleryPhotoById.php';
 
 
 //HdPromotion routes
