@@ -124,6 +124,9 @@ require '../src/routes/HdGallery/updateHdGallery.php';
 require '../src/routes/HdPromotion/addHdPromotion.php';
 require '../src/routes/HdPromotion/deleteHdPromotion.php';
 require '../src/routes/HdPromotion/updateHdPromotion.php';
+require '../src/routes/HdPromotion/getAllHdPromotions.php';
+require '../src/routes/HdPromotion/getHdPromotionById.php';
+
 
 //HdWorkHour routes
 require  '../src/routes/HdWorkHour/addHdWorkHour.php';
