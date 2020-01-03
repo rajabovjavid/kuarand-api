@@ -134,11 +134,15 @@ require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
 require  '../src/routes/Reservation/addReservation.php';
 require  '../src/routes/Reservation/deleteReservation.php';
 require  '../src/routes/Reservation/updateReservation.php';
+require  '../src/routes/Reservation/getAllReservations.php';
+require  '../src/routes/Reservation/getReservationById.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';
 require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
+require  '../src/routes/Service/getAllServices.php';
+require  '../src/routes/Service/getServiceById.php';
 
 //other
 require '../src/routes/getStatistics.php';
