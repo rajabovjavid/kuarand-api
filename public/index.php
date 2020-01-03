@@ -63,6 +63,8 @@ require '../src/routes/Customer/getCustomerById.php';
 require '../src/routes/CommentReply/addCommentReply.php';
 require '../src/routes/CommentReply/deleteCommentReply.php';
 require '../src/routes/CommentReply/updateCommentReply.php';
+require '../src/routes/CommentReply/getAllCommentReplies.php';
+require '../src/routes/CommentReply/getCommentReplyById.php';
 
 // employee routes
 require '../src/routes/Employee/addEmployee.php';
