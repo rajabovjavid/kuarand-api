@@ -119,6 +119,9 @@ require '../src/routes/HdContact/updateHdContact.php';
 require '../src/routes/HdGallery/addHdGallery.php';
 require '../src/routes/HdGallery/deleteHdGallery.php';
 require '../src/routes/HdGallery/updateHdGallery.php';
+require '../src/routes/HdGallery/getAllHdGalleries.php';
+require '../src/routes/HdGallery/getHdGalleryById.php';
+
 
 //HdPromotion routes
 require '../src/routes/HdPromotion/addHdPromotion.php';
