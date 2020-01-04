@@ -72,10 +72,15 @@ $app->get('/api/getStatistics', function (Request $request, Response $response) 
         $hdWorkHour_query->execute();
         $hdWorkHours_count = $hdWorkHour_query->fetch(PDO::FETCH_OBJ);
 
+        $tableCount_query = $db->prepare("SELECT COUNT(*) as table_count FROM information_schema.tables WHERE table_schema = 'kuarand' AND TABLE_TYPE != 'view' AND TABLE_NAME != 'HairdresserStatusLog' AND TABLE_NAME != 'AdminInsertLog';");
+        $tableCount_query->execute();
+        $tableCount = $tableCount_query->fetch(PDO::FETCH_OBJ);
+
 
 
         $data = array(
             'status' => 'ok',
+            'table_count' => $tableCount->table_count,
             'hairdressers_count' => $hairdressers_count->hd_count,
             'customers_count' => $customers_count->cus_count,
             'reservations_count' => $reservations_count->res_count,
