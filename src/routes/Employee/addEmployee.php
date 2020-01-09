@@ -10,6 +10,11 @@ $app->post('/api/employee/addEmployee', function (Request $request, Response $re
     $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
     $employeeGender = $request->getParam('employee_gender');
 
+    $data = array(
+        'data' => $request->getParam('employee_photo'),
+    );
+    return $response->withJson($data);
+
     try {
         // Get DB Object
         $db = new db();
