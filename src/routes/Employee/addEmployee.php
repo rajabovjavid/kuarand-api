@@ -11,7 +11,7 @@ $app->post('/api/employee/addEmployee', function (Request $request, Response $re
     $employeeGender = $request->getParam('employee_gender');
 
     $data = array(
-        'data' => $request->getParam('employee_photo'),
+        'data' => $employeePhoto
     );
     return $response->withJson($data);
 
