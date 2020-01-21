@@ -5,6 +5,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require '../vendor/autoload.php';
 require '../src/config/db.php';
+require '../src/config/write_to_file.php';
 
 $app = new Slim\App;
 
@@ -96,6 +97,8 @@ require '../src/routes/Hairdresser/getAllHairdressers.php';
 require '../src/routes/Hairdresser/getHairdresserById.php';
 require '../src/routes/Hairdresser/getHairdressersByStatus.php';
 require '../src/routes/Hairdresser/filterHairdressersWithName.php';
+require '../src/routes/Hairdresser/signinHairdresser.php';
+
 
 require '../src/routes/haird_resser/signup.php';
 require '../src/routes/haird_resser/add_address.php';
