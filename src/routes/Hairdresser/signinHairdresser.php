@@ -29,7 +29,7 @@ $app->post('/api/hairdresser/signinHairdresser', function (Request $request, Res
 
         if ($row_count == 1) {
 
-            $hairdresser = $get_hd_query->fetch(PDO::FETCH_OBJ);
+            $hairdresser = $get_hd_query->fetch(PDO::FETCH_OBJ); // TODO - password'u döndürmemesi lazım
 
             $data = array(
                 'status' => 'ok',
@@ -47,7 +47,12 @@ $app->post('/api/hairdresser/signinHairdresser', function (Request $request, Res
             return $response->withJson($data);
         }
     } catch (PDOException $e) {
-        echo '{"error": {"text": ' . $e->getMessage() . '}';
+        $data = array(
+            'status' => 'error',
+            'error_code' => 2,
+            'message' => $e->getMessage()
+        );
+        return $response->withJson($data);
     }
 
 });
