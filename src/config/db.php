@@ -2,9 +2,9 @@
 class db
 {
     // Properties
-    private $dbhost = 'jvdrjbvaws.cffb5ecxegu8.us-east-2.rds.amazonaws.com';
-    private $dbuser = 'kuarandawslogin';
-    private $dbpass = 'kuafofrandevuaws';
+    private $dbhost = 'localhost';
+    private $dbuser = 'root';
+    private $dbpass = 'root';
     private $dbname = 'kuarand';
 
     // Connect
