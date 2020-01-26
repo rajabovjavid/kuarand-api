@@ -160,6 +160,7 @@ require  '../src/routes/HdWorkHour/deleteHdWorkHour.php';
 require  '../src/routes/HdWorkHour/updateHdWorkHour.php';
 require  '../src/routes/HdWorkHour/getAllHdWorkHours.php';
 require  '../src/routes/HdWorkHour/getHdWorkHourById.php';
+require  '../src/routes/HdWorkHour/filterHdWorkHourWithHd.php';
 
 //Reservation routes
 require  '../src/routes/Reservation/addReservation.php';
@@ -167,6 +168,7 @@ require  '../src/routes/Reservation/deleteReservation.php';
 require  '../src/routes/Reservation/updateReservation.php';
 require  '../src/routes/Reservation/getAllReservations.php';
 require  '../src/routes/Reservation/getReservationById.php';
+require '../src/routes/Reservation/filterReservationsWithHd.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';
