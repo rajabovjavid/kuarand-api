@@ -74,6 +74,8 @@ require '../src/routes/Employee/updateEmployee.php';
 require '../src/routes/Employee/getAllEmployees.php';
 require '../src/routes/Employee/getEmployeeById.php';
 require '../src/routes/Employee/getEmployeePhotoById.php';
+require '../src/routes/Employee/filterEmployeesByHd.php';
+
 
 // employee services routes
 require '../src/routes/EmployeeServices/addEmployeeService.php';

@@ -3,11 +3,10 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+// get all employees
+$app->get('/api/employee/filterEmployeeByHd', function (Request $request, Response $response) {
 
-// get employee by id
-$app->get('/api/employee/getEmployeeById', function (Request $request, Response $response){
-
-    $employeeId =$request->getQueryParams()["emp_id"];
+    $hdId =$request->getQueryParams()["hd_id"];
 
     try {
         // Get DB Object
@@ -16,13 +15,13 @@ $app->get('/api/employee/getEmployeeById', function (Request $request, Response 
         $db = $db->connect();
 
         $employee_query = $db->prepare(
-            "SELECT employeeId, employeeName, employeeGender
+            "SELECT employeeId, hdId, employeeName, employeeGender
                       FROM Employee
-                      WHERE employeeId=:emp_id");
+                      WHERE hdId=:hd_id");
         $employee_query->execute(array(
-            'emp_id' => $employeeId
+            'hd_id' => $hdId
         ));
-        $employees = $employee_query->fetch(PDO::FETCH_OBJ);
+        $employees = $employee_query->fetchAll(PDO::FETCH_OBJ);
 
         $data = array(
             'status' => 'ok',
@@ -34,4 +33,3 @@ $app->get('/api/employee/getEmployeeById', function (Request $request, Response 
         echo '{"error": {"text": ' . $e->getMessage() . '}';
     }
 });
-
