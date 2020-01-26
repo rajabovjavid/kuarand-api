@@ -8,7 +8,10 @@ $app->put('/api/employee/updateEmployee', function (Request $request, Response $
 
     $employeeId = $request->getParam('employee_id');
     $employeeName = $request->getParam('employee_name');
-    $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+
+    if($request->getParam('employee_photo') == "") $employeePhoto=null;
+    else $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+
     $employeeGender = $request->getParam('employee_gender');
 
 
@@ -39,6 +42,7 @@ $app->put('/api/employee/updateEmployee', function (Request $request, Response $
 
         $data = array(
             'status' => 'ok',
+            'data' => $employeeId,
             'message' => 'employee is updated'
         );
         return $response->withJson($data);
