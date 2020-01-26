@@ -7,7 +7,10 @@ $app->post('/api/employee/addEmployee', function (Request $request, Response $re
 
     $hdId = $request->getParam('hd_id');
     $employeeName = $request->getParam('employee_name');
-    $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+
+    if($request->getParam('employee_photo') == "") $employeePhoto=null;
+    else $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+
     $employeeGender = $request->getParam('employee_gender');
 
     try {
@@ -36,7 +39,6 @@ $app->post('/api/employee/addEmployee', function (Request $request, Response $re
 
         $data = array(
             'status' => 'ok',
-            'data' => $db->lastInsertId(),
             'message' => 'employee is added'
         );
         return $response->withJson($data);
