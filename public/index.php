@@ -51,6 +51,7 @@ require '../src/routes/Admin/updateAdmin.php';
 require '../src/routes/Admin/deleteAdmin.php';
 require '../src/routes/Admin/getAllAdmins.php';
 require '../src/routes/Admin/getAdminById.php';
+require '../src/routes/Admin/signinAdmin.php';
 
 //customer routes
 require '../src/routes/Customer/addCustomer.php';
