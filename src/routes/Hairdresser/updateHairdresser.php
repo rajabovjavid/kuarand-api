@@ -8,7 +8,7 @@ $app->put('/api/hairdresser/updateHairdresser', function (Request $request, Resp
 
     $hdName = $request->getParam('hd_name');
     $hdEmail = $request->getParam('hd_email');
-    $hdPassword = md5($request->getParam('hd_password'));
+    $hdPassword = ($request->getParam('hd_password') == "") ? "" : md5($request->getParam('hd_password'));
     $hdType = $request->getParam('hd_type');
     $hdStatus = $request->getParam('hd_status');
 
