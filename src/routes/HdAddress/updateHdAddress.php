@@ -32,14 +32,15 @@ $app->put('/api/hdAddress/updateHdAddress', function (Request $request, Response
             $data = array(
                 'status' => 'error',
                 'error_code' => 1,
-                'message' => 'hd contact is not updated'
+                'message' => 'hd address is not updated'
             );
             return $response->withJson($data);
         }
 
         $data = array(
             'status' => 'ok',
-            'message' => 'hd contact is updated'
+            'data' => $hdId,
+            'message' => 'hd address is updated'
         );
         return $response->withJson($data);
 
