@@ -33,6 +33,7 @@ $app->put('/api/hdContact/updateHdContact', function (Request $request, Response
 
         $data = array(
             'status' => 'ok',
+            'data' => $hdContactId,
             'message' => 'hd contact is updated'
         );
         return $response->withJson($data);

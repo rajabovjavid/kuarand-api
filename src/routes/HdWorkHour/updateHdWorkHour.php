@@ -53,6 +53,8 @@ $app->put('/api/hdWorkHour/updateHdWorkHour', function (Request $request, Respon
 
         $data = array(
             'status' => 'ok',
+            'hd_id' => $hdId,
+            'day' => $day,
             'message' => 'hdWorkHour is updated'
         );
         return $response->withJson($data);

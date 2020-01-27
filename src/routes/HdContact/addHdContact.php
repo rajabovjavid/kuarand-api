@@ -25,7 +25,7 @@ $app->post('/api/hdContact/addHdContact', function (Request $request, Response $
         if (!$add) {
             $data = array(
                 'status' => 'error',
-                'error_code' => 2,
+                'error_code' => 1,
                 'message' => 'hd contact is not added'
             );
             return $response->withJson($data);
