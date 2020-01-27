@@ -7,7 +7,6 @@ $app->post('/api/service/addService', function (Request $request, Response $resp
 
     $serName = $request->getParam('ser_name');
     $serType = $request->getParam('ser_type');
-    $serMinTime = $request->getParam('ser_minTime');
 
     try{
         // Get DB Object
@@ -16,10 +15,9 @@ $app->post('/api/service/addService', function (Request $request, Response $resp
         $db = $db->connect();
 
         // add service
-        $add_service_query = $db->prepare("CALL addService(?, ?, ?)");
+        $add_service_query = $db->prepare("CALL addService(?, ?)");
         $add_service_query->bindParam(1, $serName, PDO::PARAM_STR);
         $add_service_query->bindParam(2, $serType, PDO::PARAM_INT);
-        $add_service_query->bindParam(3, $serMinTime, PDO::PARAM_STR);
         $add = $add_service_query->execute();
 
         if (!$add) {
@@ -33,13 +31,19 @@ $app->post('/api/service/addService', function (Request $request, Response $resp
 
         $data = array(
             'status' => 'ok',
+            'data' => $add_service_query->fetch(PDO::FETCH_OBJ),
             'message' => 'service is added'
         );
         return $response->withJson($data);
 
     }
     catch(PDOException $e) {
-        echo '{"error": {"text": ' . $e->getMessage() . '}';
+        $data = array(
+            'status' => 'error',
+            'error_code' => 2,
+            'message' => $e->getMessage()
+        );
+        return $response->withJson($data);
     }
 
 });

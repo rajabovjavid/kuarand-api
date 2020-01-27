@@ -114,7 +114,8 @@ require '../src/routes/HairdresserServices/addHairdresserService.php';
 require '../src/routes/HairdresserServices/deleteHairdresserService.php';
 require '../src/routes/HairdresserServices/updateHairdresserService.php';
 require '../src/routes/HairdresserServices/getAllHairdresserServices.php';
-require '../src/routes/HairdresserServices/getHairdresserServicesById.php';
+require '../src/routes/HairdresserServices/getHairdresserServicesByHd.php';
+require '../src/routes/HairdresserServices/filterServicesByHd.php';
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
@@ -174,6 +175,8 @@ require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
 require  '../src/routes/Service/getAllServices.php';
 require  '../src/routes/Service/getServiceById.php';
+
+
 
 //other
 require '../src/routes/getStatistics.php';

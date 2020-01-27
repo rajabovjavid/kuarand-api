@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 $app->delete('/api/hairdresserServices/deleteHairdresserService', function (Request $request, Response $response) {
 
     $hdId = $request->getParam('hd_id');
-    $serviceId = $request->getParam('service_id');
+    $serviceId = $request->getParam('ser_id');
 
     try {
         // Get DB Object
