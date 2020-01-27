@@ -5,7 +5,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require '../vendor/autoload.php';
 require '../src/config/db.php';
-require '../src/config/write_to_file.php';
 
 $app = new Slim\App;
 
@@ -136,6 +135,7 @@ require '../src/routes/HdContact/deleteHdContact.php';
 require '../src/routes/HdContact/updateHdContact.php';
 require '../src/routes/HdContact/getAllHdContacts.php';
 require '../src/routes/HdContact/getHdContactById.php';
+require '../src/routes/HdContact/getHdContactByHdId.php';
 
 //HdGallery routes
 require '../src/routes/HdGallery/addHdGallery.php';
