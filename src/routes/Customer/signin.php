@@ -5,7 +5,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 
 // custo_mer sign in
-$app->post('/api/custo_mer/signin', function (Request $request, Response $response){
+$app->post('/api/customer/signin', function (Request $request, Response $response){
     $cusEmail = $request->getParam('cus_email');
     $cusPassword = md5($request->getParam('cus_password'));
 
@@ -17,7 +17,7 @@ $app->post('/api/custo_mer/signin', function (Request $request, Response $respon
         $db = $db->connect();
 
         $get_customer_query = $db->prepare(
-            "select * 
+            "select customerId, customerName, customerEmail, customerCreatedAt, customerPhone 
                       from Customer 
                       where customerEmail=:mail and customerPassword=:password");
         $get_customer_query->execute(array(
@@ -34,14 +34,14 @@ $app->post('/api/custo_mer/signin', function (Request $request, Response $respon
             $data = array(
                 'status' => 'ok',
                 'data' => $customer,
-                'message' => 'custo_mer is signed in'
+                'message' => 'customer is signed in'
             );
             return $response->withJson($data);
         }
         $data = array(
             'status' => 'error',
             'error_code' => 1,
-            'message' => 'custo_mer email or password is incorrect'
+            'message' => 'Customer email or password is incorrect!'
         );
         return $response->withJson($data);
     }

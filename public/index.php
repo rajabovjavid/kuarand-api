@@ -59,6 +59,7 @@ require '../src/routes/Customer/updateCustomer.php';
 require '../src/routes/Customer/filterCustomersWithName.php';
 require '../src/routes/Customer/getAllCustomers.php';
 require '../src/routes/Customer/getCustomerById.php';
+require '../src/routes/Customer/signin.php';
 
 // commentReply routes
 require '../src/routes/CommentReply/addCommentReply.php';
@@ -89,7 +90,7 @@ require '../src/routes/custo_mer/get_all.php';
 require '../src/routes/custo_mer/get_name_by_email.php';
 require '../src/routes/custo_mer/get_customer_by_id.php';
 require '../src/routes/custo_mer/signup.php';
-require '../src/routes/custo_mer/signin.php';
+
 
 //hairdresser routes
 require '../src/routes/Hairdresser/addHairdresser.php';
