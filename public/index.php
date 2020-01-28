@@ -100,6 +100,7 @@ require '../src/routes/Hairdresser/getHairdresserById.php';
 require '../src/routes/Hairdresser/getHairdressersByStatus.php';
 require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 require '../src/routes/Hairdresser/signinHairdresser.php';
+require '../src/routes/Hairdresser/searchHairdressers.php';
 
 
 require '../src/routes/haird_resser/signup.php';
@@ -115,6 +116,7 @@ require '../src/routes/HairdresserServices/updateHairdresserService.php';
 require '../src/routes/HairdresserServices/getAllHairdresserServices.php';
 require '../src/routes/HairdresserServices/getHairdresserServicesByHd.php';
 require '../src/routes/HairdresserServices/filterServicesByHd.php';
+
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
@@ -177,6 +179,7 @@ require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
 require  '../src/routes/Service/getAllServices.php';
 require  '../src/routes/Service/getServiceById.php';
+
 
 
 
