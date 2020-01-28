@@ -101,7 +101,7 @@ require '../src/routes/Hairdresser/getHairdressersByStatus.php';
 require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 require '../src/routes/Hairdresser/signinHairdresser.php';
 require '../src/routes/Hairdresser/searchHairdressers.php';
-require '../src/routes/Hairdresser/getAllHdInfo.php';
+//require '../src/routes/Hairdresser/getAllHdInfo.php';
 
 
 require '../src/routes/haird_resser/signup.php';
