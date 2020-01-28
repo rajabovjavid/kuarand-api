@@ -59,6 +59,7 @@ require '../src/routes/Customer/updateCustomer.php';
 require '../src/routes/Customer/filterCustomersWithName.php';
 require '../src/routes/Customer/getAllCustomers.php';
 require '../src/routes/Customer/getCustomerById.php';
+require '../src/routes/Customer/get_name_by_email.php';
 
 // commentReply routes
 require '../src/routes/CommentReply/addCommentReply.php';
@@ -86,7 +87,6 @@ require '../src/routes/EmployeeServices/getEmployeeServicesById.php';
 
 
 require '../src/routes/custo_mer/get_all.php';
-require '../src/routes/custo_mer/get_name_by_email.php';
 require '../src/routes/custo_mer/get_customer_by_id.php';
 require '../src/routes/custo_mer/signup.php';
 require '../src/routes/custo_mer/signin.php';
@@ -101,7 +101,7 @@ require '../src/routes/Hairdresser/getHairdressersByStatus.php';
 require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 require '../src/routes/Hairdresser/signinHairdresser.php';
 require '../src/routes/Hairdresser/searchHairdressers.php';
-//require '../src/routes/Hairdresser/getAllHdInfo.php';
+require '../src/routes/Hairdresser/getAllHdInfo.php';
 
 
 require '../src/routes/haird_resser/signup.php';

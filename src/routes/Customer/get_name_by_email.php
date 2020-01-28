@@ -5,9 +5,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 
 // get custo_mer name by email
-$app->get('/api/custo_mer/getName/{email}', function (Request $request, Response $response, $args) {
+$app->get('/api/customer/getName', function (Request $request, Response $response) {
 
-    $cusEmail = $args['email'];
+    $cusEmail = $request->getQueryParams()["cus_email"];
 
     try {
         // Get DB Object
