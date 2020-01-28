@@ -8,8 +8,10 @@ $app->post('/api/employee/addEmployee', function (Request $request, Response $re
     $hdId = $request->getParam('hd_id');
     $employeeName = $request->getParam('employee_name');
 
-    if($request->getParam('employee_photo') == "") $employeePhoto=null;
-    else $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+//    if($request->getParam('employee_photo') == "") $employeePhoto=null;
+//    else $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+
+    $employeePhoto =  base64_encode(file_get_contents($request->getParam('employee_photo')));
 
     $employeeGender = $request->getParam('employee_gender');
 

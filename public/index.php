@@ -101,6 +101,7 @@ require '../src/routes/Hairdresser/getHairdressersByStatus.php';
 require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 require '../src/routes/Hairdresser/signinHairdresser.php';
 require '../src/routes/Hairdresser/searchHairdressers.php';
+require '../src/routes/Hairdresser/getAllHdInfo.php';
 
 
 require '../src/routes/haird_resser/signup.php';
@@ -116,7 +117,6 @@ require '../src/routes/HairdresserServices/updateHairdresserService.php';
 require '../src/routes/HairdresserServices/getAllHairdresserServices.php';
 require '../src/routes/HairdresserServices/getHairdresserServicesByHd.php';
 require '../src/routes/HairdresserServices/filterServicesByHd.php';
-
 
 // hdAddress routes
 require '../src/routes/HdAddress/addHdAddress.php';
@@ -146,7 +146,7 @@ require '../src/routes/HdGallery/deleteHdGallery.php';
 require '../src/routes/HdGallery/updateHdGallery.php';
 require '../src/routes/HdGallery/getAllHdGalleries.php';
 require '../src/routes/HdGallery/getHdGalleryById.php';
-require '../src/routes/HdGallery/getHdGalleryPhotoById.php';
+require '../src/routes/HdGallery/getHdGalleryByHd.php';
 
 
 //HdPromotion routes
@@ -155,7 +155,7 @@ require '../src/routes/HdPromotion/deleteHdPromotion.php';
 require '../src/routes/HdPromotion/updateHdPromotion.php';
 require '../src/routes/HdPromotion/getAllHdPromotions.php';
 require '../src/routes/HdPromotion/getHdPromotionById.php';
-
+require '../src/routes/HdPromotion/getHdPromotionByHd_SerId.php';
 
 //HdWorkHour routes
 require  '../src/routes/HdWorkHour/addHdWorkHour.php';
@@ -179,7 +179,6 @@ require '../src/routes/Service/deleteService.php';
 require '../src/routes/Service/updateService.php';
 require  '../src/routes/Service/getAllServices.php';
 require  '../src/routes/Service/getServiceById.php';
-
 
 
 
