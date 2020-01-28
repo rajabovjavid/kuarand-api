@@ -9,8 +9,9 @@ $app->put('/api/employee/updateEmployee', function (Request $request, Response $
     $employeeId = $request->getParam('employee_id');
     $employeeName = $request->getParam('employee_name');
 
-    if($request->getParam('employee_photo') == "") $employeePhoto=null;
-    else $employeePhoto = fopen($request->getParam('employee_photo'), "rb");
+    if($request->getParam('employee_photo') == "") $employeePhoto=$request->getParam('employee_photo_base64');
+    else $employeePhoto =  base64_encode(file_get_contents($request->getParam('employee_photo')));
+
 
     $employeeGender = $request->getParam('employee_gender');
 
