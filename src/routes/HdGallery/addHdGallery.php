@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 $app->post('/api/hdGallery/addHdGallery', function (Request $request, Response $response) {
 
     $hdId = $request->getParam('hd_id');
-    $hdPhoto = fopen($request->getParam('hd_photo'), "rb");
+    $hdPhoto =  base64_encode(file_get_contents($request->getParam('hd_photo')));
     $hdPhotoPriority = $request->getParam('hdPhoto_priority');
 
     try{

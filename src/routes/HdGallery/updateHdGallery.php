@@ -6,7 +6,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 $app->put('/api/hdGallery/updateHdGallery', function (Request $request, Response $response) {
 
     $hdGalleryId = $request->getParam('hdGallery_id');
-    $hdPhoto = fopen($request->getParam('hd_photo'), "rb");
     $hdPhotoPriority = $request->getParam('hdPhoto_priority');
 
     try{
@@ -33,10 +32,9 @@ $app->put('/api/hdGallery/updateHdGallery', function (Request $request, Response
         }
 
         // update hdGallery
-        $update_hdGallery_query = $db->prepare("CALL updateHdGallery(?, ?, ?)");
+        $update_hdGallery_query = $db->prepare("CALL updateHdGallery(?, ?)");
         $update_hdGallery_query->bindParam(1, $hdGalleryId, PDO::PARAM_INT);
-        $update_hdGallery_query->bindParam(2, $hdPhoto, PDO::PARAM_LOB);
-        $update_hdGallery_query->bindParam(3, $hdPhotoPriority, PDO::PARAM_INT);
+        $update_hdGallery_query->bindParam(2, $hdPhotoPriority, PDO::PARAM_INT);
         $update = $update_hdGallery_query->execute();
 
         if (!$update) {
