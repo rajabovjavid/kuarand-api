@@ -20,8 +20,8 @@ $app->get('/api/hairdresser/searchHairdressers', function (Request $request, Res
         $db = $db->connect();
 
         $hairdressers_query = $db->prepare(
-            "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating
-                      FROM allinfohdview
+            "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating, hdPhoto
+                      FROM searchinfohdview
                       WHERE hdName LIKE :hd_name OR hdType=:hd_type OR hdAddressCity=:city OR serName LIKE :ser_name OR hdAddressRegion LIKE :region");
         $hairdressers_query->execute(array(
             "hd_name" => $hd_name,

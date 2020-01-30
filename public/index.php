@@ -51,6 +51,7 @@ require '../src/routes/Admin/deleteAdmin.php';
 require '../src/routes/Admin/getAllAdmins.php';
 require '../src/routes/Admin/getAdminById.php';
 require '../src/routes/Admin/signinAdmin.php';
+require '../src/routes/Admin/updateAdminAuth.php';
 
 //customer routes
 require '../src/routes/Customer/addCustomer.php';
@@ -103,6 +104,7 @@ require '../src/routes/Hairdresser/filterHairdressersWithName.php';
 require '../src/routes/Hairdresser/signinHairdresser.php';
 require '../src/routes/Hairdresser/searchHairdressers.php';
 require '../src/routes/Hairdresser/getAllHdInfo.php';
+require '../src/routes/Hairdresser/getActiveHairdressers.php';
 
 
 require '../src/routes/haird_resser/signup.php';

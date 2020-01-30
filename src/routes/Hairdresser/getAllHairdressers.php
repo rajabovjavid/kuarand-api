@@ -12,7 +12,7 @@ $app->get('/api/hairdresser/getAllHairdressers', function (Request $request, Res
         // Connect
         $db = $db->connect();
 
-        $hairdresser_query = $db->prepare("SELECT hdId, hdName, hdEmail, hdType, hdStatus, hdCreatedAt, hdRating FROM Hairdresser");
+        $hairdresser_query = $db->prepare("SELECT hdId, hdName, hdEmail, hdType, hdStatus, hdCreatedAt, hdRating, hdCommentCount FROM Hairdresser");
         $hairdresser_query->execute();
         $hairdressers = $hairdresser_query->fetchAll(PDO::FETCH_OBJ);
 

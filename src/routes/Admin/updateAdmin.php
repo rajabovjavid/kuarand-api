@@ -8,7 +8,7 @@ $app->put('/api/admin/updateAdmin', function (Request $request, Response $respon
 
     $adminName = $request->getParam('admin_name');
     $adminEmail = $request->getParam('admin_email');
-    $adminPassword = md5($request->getParam('admin_password'));
+    $adminPassword = ($request->getParam('admin_password') == "") ? "" : md5($request->getParam('admin_password'));
     $adminType = $request->getParam('admin_type');
 
 
@@ -40,7 +40,7 @@ $app->put('/api/admin/updateAdmin', function (Request $request, Response $respon
         $update_admin_query = $db->prepare("CALL updateAdmin(?, ?, ?, ?)");
         $update_admin_query->bindParam(1, $adminEmail, PDO::PARAM_STR);
         $update_admin_query->bindParam(2, $adminName, PDO::PARAM_STR);
-        $update_admin_query->bindParam(3, $adminType, PDO::PARAM_STR);
+        $update_admin_query->bindParam(3, $adminType, PDO::PARAM_INT);
         $update_admin_query->bindParam(4, $adminPassword, PDO::PARAM_STR);
         $update = $update_admin_query->execute();
 
@@ -54,8 +54,11 @@ $app->put('/api/admin/updateAdmin', function (Request $request, Response $respon
             return $response->withJson($data);
         }
 
+        $updatedAdmin = $update_admin_query->fetch(PDO::FETCH_OBJ);
+
         $data = array(
             'status' => 'ok',
+            "data" => $updatedAdmin,
             'message' => 'admin is updated'
         );
         return $response->withJson($data);
