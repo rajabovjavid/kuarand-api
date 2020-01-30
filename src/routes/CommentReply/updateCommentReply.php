@@ -19,7 +19,7 @@ $app->put('/api/commentReply/updateCommentReply', function (Request $request, Re
         // update admin
         $update_commentReply_query = $db->prepare("CALL updateCommentReply(?, ?)");
         $update_commentReply_query->bindParam(1, $replyId, PDO::PARAM_STR);
-        $update_commentReply_query->bindParam(2, $replyContent, PDO::PARAM_INT);
+        $update_commentReply_query->bindParam(2, $replyContent, PDO::PARAM_STR);
         $update = $update_commentReply_query->execute();
 
 

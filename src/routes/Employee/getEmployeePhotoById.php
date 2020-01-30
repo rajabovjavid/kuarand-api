@@ -26,7 +26,7 @@ $app->get('/api/employee/getEmployeePhotoById', function (Request $request, Resp
 
         $data = array(
             'status' => 'ok',
-            'data' =>  base64_encode($photo)
+            'data' =>  $photo
         );
         return $response->withJson($data);
 
