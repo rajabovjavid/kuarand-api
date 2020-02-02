@@ -57,6 +57,15 @@ $app->get('/api/hairdresser/getAllHdInfo', function (Request $request, Response 
         $hairdresser_query5->execute();
         $hairdresser_contact = $hairdresser_query5->fetchAll(PDO::FETCH_OBJ);
 
+        $hairdresser_query6 = $db->prepare(
+            "SELECT R.reservationDate, HS.serMinTime
+                      FROM Reservation R, HairdresserServices HS
+                      WHERE R.hdId=HS.hdId and R.hdId='$hdId' and R.isFinished = 0");
+        $hairdresser_query6->execute();
+        $hairdresser_reservation = $hairdresser_query6->fetchAll(PDO::FETCH_OBJ);
+
+
+
 
         foreach ($hairdresser_gallery as $photo){
             if($photo->hdPhotoPriority == 1){
@@ -83,7 +92,8 @@ $app->get('/api/hairdresser/getAllHdInfo', function (Request $request, Response 
             "hdEmployees" => $hairdresser_employees,
             "hdGallery" => $hairdresser_gallery,
             "hdImpPhoto" => $impPhoto,
-            "hdContacts" => $hairdresser_contact
+            "hdContacts" => $hairdresser_contact,
+            "hdReservations" => $hairdresser_reservation
         );
 
         $data = array(
