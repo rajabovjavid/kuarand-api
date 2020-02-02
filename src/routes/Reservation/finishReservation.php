@@ -32,11 +32,11 @@ $app->put('/api/reservation/finishReservation', function (Request $request, Resp
 
         $today = date("Y-m-d H:i:s");
 
-        if(!$reservation->reservationDate == $today){
+        if(!strtotime($reservation->reservationDate) <= strtotime($today)){
             $data = array(
                 'status' => 'error',
                 'error_code' => 2,
-                'message' => 'reservation is finished yet'
+                'message' => 'rezervasyon tarihi daha gelmedi'
             );
             return $response->withJson($data);
         }
