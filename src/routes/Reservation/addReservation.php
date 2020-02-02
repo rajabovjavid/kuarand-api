@@ -79,7 +79,7 @@ $app->post('/api/reservation/addReservation', function (Request $request, Respon
             $data = array(
                 'status' => 'error',
                 'error_code' => 1,
-                'message' => 'reservation is not added, because date is not proper'
+                'message' => 'reservation is not added, look work hours or reserved times'
             );
             return $response->withJson($data);
         }

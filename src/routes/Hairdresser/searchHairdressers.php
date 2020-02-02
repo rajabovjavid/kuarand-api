@@ -19,17 +19,27 @@ $app->get('/api/hairdresser/searchHairdressers', function (Request $request, Res
         // Connect
         $db = $db->connect();
 
-        $hairdressers_query = $db->prepare(
-            "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating, hdPhoto
-                      FROM searchinfohdview
-                      WHERE hdName LIKE :hd_name OR hdType=:hd_type OR hdAddressCity=:city OR serName LIKE :ser_name OR hdAddressRegion LIKE :region");
-        $hairdressers_query->execute(array(
-            "hd_name" => $hd_name,
-            "city" => $city,
-            "region" => $region,
-            "ser_name" => $ser_name,
-            "hd_type" => $hd_type
-        ));
+        $statement = "";
+
+        if($ser_name!=""){
+            $statement = "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating, hdPhoto
+                          FROM searchinfohdview
+                          WHERE hdAddressCity='$city' and hdAddressRegion='$region' and serName='$ser_name'";
+        }
+        elseif ($hd_type!=""){
+            $statement = "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating, hdPhoto
+                          FROM searchinfohdview
+                          WHERE hdAddressCity='$city' and hdAddressRegion='$region' and hdType='$hd_type'";
+        }
+        elseif ($hd_name!=""){
+            $statement = "SELECT DISTINCT hdId, hdName, hdAddressCity, hdAddressRegion, hdRating, hdPhoto
+                          FROM searchinfohdview
+                          WHERE hdAddressCity='$city' and hdAddressRegion='$region' and hdName='$hd_name'";
+        }
+
+
+        $hairdressers_query = $db->prepare($statement);
+        $hairdressers_query->execute();
         $searchResult = $hairdressers_query->fetchAll(PDO::FETCH_OBJ);
 
         $data = array(
