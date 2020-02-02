@@ -176,6 +176,7 @@ require  '../src/routes/Reservation/updateReservation.php';
 require  '../src/routes/Reservation/getAllReservations.php';
 require  '../src/routes/Reservation/getReservationById.php';
 require '../src/routes/Reservation/filterReservationsWithHd.php';
+require '../src/routes/Reservation/finishReservation.php';
 
 //Service routes
 require '../src/routes/Service/addService.php';

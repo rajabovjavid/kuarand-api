@@ -16,7 +16,7 @@ $app->get('/api/reservation/filterReservationsWithHd', function (Request $reques
         $db = $db->connect();
 
         $reservation_query = $db->prepare(
-            "SELECT hdId, reservationId, customerName, customerPhone, reservationDate, serName, serPrice
+            "SELECT hdId, reservationId, customerName, customerPhone, reservationDate, serName, serPrice, isFinished
                       FROM hairdresserreservationsview
                       WHERE hdId=:hd_id");
         $reservation_query->execute(array(
