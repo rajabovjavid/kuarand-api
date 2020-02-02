@@ -18,14 +18,17 @@ $app->post('/api/reservation/addReservation', function (Request $request, Respon
         $db = $db->connect();
 
         $newDateTime = explode(" ", $reservationDate);
+        $dayofweek = date('w', strtotime($newDateTime[0]));
+        $dayofweek = ($dayofweek+6)%7;
+
 //        $endTime = strtotime("+".$hdReservation["serMinTime"]." minutes", strtotime($dateTime[1]));
 
-        $reservation_query = $db->prepare(
-            "SELECT R.hdId, reservationDate, isFinished, serMinTime
-                      FROM Reservation R, HairdresserServices HS
-                      WHERE R.hdId='$hdId' and R.hdId=HS.hdId and isFinished=0");
-        $reservation_query->execute();
-        $reservations = $reservation_query->fetchAll(PDO::FETCH_OBJ);
+        $work_hour_query = $db->prepare("
+                        SELECT startHour, finishHour 
+                        FROM HdWorkHour
+                        WHERE hdId='$hdId' and day='$dayofweek'");
+        $work_hour_query->execute();
+        $work_hour = $work_hour_query->fetch(PDO::FETCH_OBJ);
 
         $service_query = $db->prepare("
                         SELECT serMinTime 
@@ -34,7 +37,25 @@ $app->post('/api/reservation/addReservation', function (Request $request, Respon
         $service_query->execute();
         $newSerMinTime = $service_query->fetch(PDO::FETCH_OBJ);
 
+        $summed_Time = strtotime("+" . $newSerMinTime->serMinTime . " minutes", strtotime($newDateTime[1]));
+        $summed_Time = date("H:i:s",$summed_Time);
+
         $add_bool = 1;
+
+        if(strtotime($work_hour->startHour)<strtotime($newDateTime[1]) && strtotime($work_hour->finishHour)>strtotime($summed_Time)){
+            $add_bool = 1;
+        }else $add_bool = 0;
+
+        $reservation_query = $db->prepare(
+            "SELECT R.hdId, reservationDate, isFinished, serMinTime
+                      FROM Reservation R, HairdresserServices HS
+                      WHERE R.hdId='$hdId' and R.hdId=HS.hdId and isFinished=0");
+        $reservation_query->execute();
+        $reservations = $reservation_query->fetchAll(PDO::FETCH_OBJ);
+
+
+
+
         foreach ($reservations as $reservation) {
             $oldDateTime = explode(" ", $reservation->reservationDate);
             if (strtotime($newDateTime[0]) == strtotime($oldDateTime[0])) {
